@@ -50,8 +50,10 @@ public interface GitHubService {
 ```
 
 简单说明一下
-@GET表示为get请求，还会有@POST
-@PATH 表示后面的参数要添加到@GETR后面对应的{user}中，{user}相当于一个占位符
+@GET表示为get请求，
+还会有@POST
+@PATH 表示后面的参数要添加到
+@GET后面对应的{user}中，{user}相当于一个占位符
 学习spring MVC都知道这种做学法把请求参数添加到请求路径中去，
 
 @Query就是我们的请求的键值对的设置
