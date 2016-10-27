@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.liu.retrofitdemo2.ui.FirstActivity;
+import com.liu.retrofitdemo2.ui.PostNormalActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mBtnFirst;
+    private Button mBtnNormalPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +26,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         mBtnFirst = (Button) findViewById(R.id.btnFirst);
+        mBtnNormalPost= (Button) findViewById(R.id.btnNormalPost);
 
 
     }
 
     private void initListener() {
         mBtnFirst.setOnClickListener(this);
+        mBtnNormalPost.setOnClickListener(this);
     }
 
     @Override
@@ -40,7 +44,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //第一天
                 goFirstGet();
                 break;
+            case R.id.btnNormalPost:
+                //第一天
+               goNormalPost();
+                break;
         }
+
+    }
+
+    /**
+     * 正常的POST请求
+     */
+    private void goNormalPost() {
+
+        startActivity(new Intent(this, PostNormalActivity.class));
 
     }
 
