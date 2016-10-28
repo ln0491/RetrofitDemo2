@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/activity_upload"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,37 +10,21 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.liu.retrofitdemo2.MainActivity">
+    tools:context="com.liu.retrofitdemo2.ui.UploadActivity">
 
+
+    <Button
+        android:id="@+id/btnUploadOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="上传一张"/>
 
 
 
     <Button
-        android:id="@+id/btnFirst"
+        android:id="@+id/btnUploadMany"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="第一个get请求"/>
-
-
-    <Button
-        android:id="@+id/btnNormalPost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="btnNormalPost"/>
-
-
-    <Button
-        android:id="@+id/btnDownload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="btnDownload下载"/>
-
-
-    <Button
-        android:id="@+id/btnUpload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="btn上传"/>
-
+        android:text="上传多张"/>
 
 </LinearLayout>

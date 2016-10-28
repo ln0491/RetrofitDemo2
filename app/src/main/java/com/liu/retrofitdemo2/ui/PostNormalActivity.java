@@ -246,6 +246,7 @@ public class PostNormalActivity extends AppCompatActivity implements View.OnClic
         L.d("vivi",deviceId);
 
         return deviceId;
+
     }
 
 

@@ -3,8 +3,10 @@
           package="com.liu.retrofitdemo2">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <!--读取手机状态的权限-->
+    <!-- 读取手机状态的权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -22,6 +24,10 @@
         <activity android:name=".ui.FirstActivity">
         </activity>
         <activity android:name=".ui.PostNormalActivity">
+        </activity>
+        <activity android:name=".ui.DownLoadActivity">
+        </activity>
+        <activity android:name=".ui.UploadActivity">
         </activity>
     </application>
 
