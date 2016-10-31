@@ -27,8 +27,29 @@ public interface UploadService {
     Call<String> uploadOne(@QueryMap Map<String,String> params, @Part  MultipartBody.Part file);
 
 
+
+
+
     @Multipart
-    @POST("user/uploadImage")
+    @POST("file//upload")
+    Call<String> upload2(@Part   MultipartBody.Part file);
+
+    @Multipart
+    @POST("file//upload")
+    Call<String> upload22(@PartMap   Map<String,RequestBody> params);
+
+
+
+    @Multipart
+    @POST("file//upload2")
+    Call<String> upload3(@PartMap  Map<String,RequestBody> params);
+
+
+
+    @Multipart
+    @POST("file//upload2")
     Call<String> uploadMany(@PartMap Map<String, RequestBody> fileParams);
+
+
 
 }

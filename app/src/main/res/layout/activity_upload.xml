@@ -19,6 +19,18 @@
         android:layout_height="wrap_content"
         android:text="上传一张"/>
 
+    <Button
+        android:id="@+id/btnUploadOne2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="上传一张2"/>
+
+    <Button
+        android:id="@+id/btnUploadOne3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="上传一张3"/>
+
 
 
     <Button
@@ -26,5 +38,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="上传多张"/>
+
+    <Button
+        android:id="@+id/btnUploadMany2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="上传多张2"/>
+
 
 </LinearLayout>
