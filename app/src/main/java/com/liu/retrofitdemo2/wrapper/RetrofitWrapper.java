@@ -2,6 +2,11 @@ package com.liu.retrofitdemo2.wrapper;
 
 import com.liu.retrofitdemo2.apiurl.Constant;
 
+import java.io.IOException;
+
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
@@ -17,8 +22,25 @@ public class RetrofitWrapper {
     private Retrofit mRetrofit;
 
     private RetrofitWrapper(){
+
+        OkHttpClient.Builder builder = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                return null;
+            }
+        }).addNetworkInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                return null;
+            }
+        });
+
+
+        OkHttpClient okHttpClient= builder.build();
+
         mRetrofit = new Retrofit.Builder()
                 .baseUrl(Constant.BASE_URL)  //添加baseurl
+                .client(okHttpClient)
                 .addConverterFactory(ScalarsConverterFactory.create()) //添加返回为字符串的支持
                 .addConverterFactory(GsonConverterFactory.create()) //create中可以传入其它json对象，默认Gson
                 .build();
