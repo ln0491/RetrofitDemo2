@@ -10,10 +10,11 @@ import android.widget.Toast;
 import com.liu.retrofitdemo2.R;
 import com.liu.retrofitdemo2.bean.RankBean;
 import com.liu.retrofitdemo2.bean.Repo;
+import com.liu.retrofitdemo2.factory.RankBeanConverterFactory;
+import com.liu.retrofitdemo2.factory.RepoConverterFactory;
 import com.liu.retrofitdemo2.service.DayService;
 import com.liu.retrofitdemo2.service.GitHubService;
 import com.liu.retrofitdemo2.util.L;
-import com.liu.retrofitdemo2.wrapper.RetrofitWrapper;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,8 +24,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class FirstActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -84,8 +83,9 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
-                .addConverterFactory(ScalarsConverterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                //.addConverterFactory(ScalarsConverterFactory.create())
+                //.addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(new RankBeanConverterFactory())
                 .build();
 
         DayService dayService = retrofit.create(DayService.class);
@@ -136,8 +136,9 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
         Retrofit retrofit = new Retrofit.Builder()
                  .baseUrl(baseUrl)
-                .addConverterFactory(ScalarsConverterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                //.addConverterFactory(ScalarsConverterFactory.create())
+                //.addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(new RankBeanConverterFactory())
                 .build();
 
         DayService dayService = retrofit.create(DayService.class);
@@ -174,9 +175,10 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         //建立retrofit对象
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.github.com/")
                 //添加返回字符串的支持--不知道返回的是什么，添加字符串支持
-                .addConverterFactory(ScalarsConverterFactory.create())
+                //.addConverterFactory(ScalarsConverterFactory.create())
                 //添加GSON转换支持
-                .addConverterFactory(GsonConverterFactory.create())
+                //.addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(new RepoConverterFactory())
                 .build();
 
         //获取接口
@@ -192,7 +194,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
                 L.d("vivi",response.message()+"  "+response.body());
                 mTvResult.setText(response.message()+" \n结果: "+response.body().toString());
-                Toast.makeText(FirstActivity.this, "结果:\n "+response.body().toString(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(FirstActivity.this, "结果:\n "+response.body().toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -205,7 +207,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         });
 
 
-        Call<List<Repo>> callLn0941 = RetrofitWrapper.getInstance().create(GitHubService.class).listRepos("octocat");
+       /* Call<List<Repo>> callLn0941 = RetrofitWrapper.getInstance().create(GitHubService.class).listRepos("octocat");
 
         callLn0941.enqueue(new Callback<List<Repo>>() {
             @Override
@@ -222,7 +224,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
             }
         });
-
+*/
     }
 
 

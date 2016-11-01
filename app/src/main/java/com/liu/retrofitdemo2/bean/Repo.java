@@ -1,7 +1,5 @@
 package com.liu.retrofitdemo2.bean;
 
-import android.util.Base64;
-
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -83,7 +81,7 @@ public class Repo {
 
     @Override
     public String toString() {
-        Base64
+
 
         return "Repo{" +
                 "id=" + id +
